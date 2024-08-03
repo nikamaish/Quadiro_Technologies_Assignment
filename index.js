@@ -4,9 +4,9 @@ const passport = require('passport');
 const session = require('express-session');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
-const User = require('./server/models/User');
-const adminRoutes = require('./server/routes/adminRoutes');
-const userRoutes = require('./server/routes/userRoutes');
+const User = require('./models/User');
+const adminRoutes = require('./routes/adminRoutes');
+const userRoutes = require('./routes/userRoutes');
 const cors = require('cors');
 require('dotenv').config();
 
@@ -83,7 +83,7 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
